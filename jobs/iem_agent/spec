@@ -1,0 +1,7 @@
+---
+name: iem_agent
+templates:
+  iem_agent_ctl.erb: bin/iem_agent_ctl
+
+properties:
+  {}

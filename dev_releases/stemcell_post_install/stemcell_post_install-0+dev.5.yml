@@ -1,0 +1,29 @@
+---
+packages:
+- name: iem_agent
+  version: !binary |-
+    OTUwZGZiNTAxZTNmY2I1ZGYyZmM1Y2QyMjc1OTEwMTZhN2VlNWYxNQ==
+  fingerprint: !binary |-
+    OTUwZGZiNTAxZTNmY2I1ZGYyZmM1Y2QyMjc1OTEwMTZhN2VlNWYxNQ==
+  sha1: !binary |-
+    Y2MxYWE5ZjQ5NmViOTgyZjViY2YyNTgwMzg0ODU0YTVhMTVjZTJiYQ==
+  dependencies: []
+jobs:
+- name: iem_agent
+  version: !binary |-
+    NmNiN2IwZGZjZDlhMWM4ZDdmNDc3MGVjZGQwNzE0MGM0MzU0MDcxMg==
+  fingerprint: !binary |-
+    NmNiN2IwZGZjZDlhMWM4ZDdmNDc3MGVjZGQwNzE0MGM0MzU0MDcxMg==
+  sha1: !binary |-
+    YzU1ZTBmNGMwNTkwMjNjYTFiYzczYTU1YmM5Y2MwNDdmYjIzYTg4ZA==
+license:
+  version: !binary |-
+    YzJkZTcxODMzZGU0Mjg4NWRlOWI1ZmMxMTNiNDM4NzZjODMxNmE4Zg==
+  fingerprint: !binary |-
+    YzJkZTcxODMzZGU0Mjg4NWRlOWI1ZmMxMTNiNDM4NzZjODMxNmE4Zg==
+  sha1: !binary |-
+    MDkyMTUyODZjZGY3Mjk2YzVmZmUzNWU1ZDg2NDA3OGExNzNiODhjMA==
+commit_hash: '00000000'
+uncommitted_changes: false
+name: stemcell_post_install
+version: 0+dev.5
