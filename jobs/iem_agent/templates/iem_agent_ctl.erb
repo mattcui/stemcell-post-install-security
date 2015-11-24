@@ -19,7 +19,7 @@ case $1 in
     DONE_FILE=$iem_agent_bin/../iem_agent.done
     if [ ! -f $DONE_FILE ]; then
        echo "`date` - Start to install IEM Agent ..."
-       cd $iem_agent_bin/../packaages/iem_agent
+       cd $iem_agent_bin/../packages/iem_agent
        tar -zxvf *.tgz
        ./install_IEM.sh
        EXCODE=$?  

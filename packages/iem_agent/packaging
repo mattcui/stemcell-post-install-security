@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 set -e -x
 
 LOG_DIR=/var/vcap/sys/log/iem_agent
@@ -7,6 +8,5 @@ exec 1>> $LOG_DIR/$JOB_NAME.stdout.log
 exec 2>> $LOG_DIR/$JOB_NAME.stderr.log
 
 mkdir -p ${BOSH_INSTALL_TARGET}
-cp -r ${JOB_NAME}/* ${BOSH_INSTALL_TARGET} 
+cp -a ${JOB_NAME}/* ${BOSH_INSTALL_TARGET}
 echo "bosh install target is: ${BOSH_INSTALL_TARGET}, copy iem_install package"
-
