@@ -2,4 +2,4 @@
 name: iem_agent
 
 files:
-  - iem_agent/**/*
+- iem_agent/*.tgz
