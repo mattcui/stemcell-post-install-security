@@ -3,7 +3,7 @@
 RUN_DIR=/var/vcap/sys/run/iem_agent
 LOG_DIR=/var/vcap/sys/log/iem_agent
 JOB_NAME=iem_agent
-PIDFILE=${RUN_DIR}/pid
+PIDFILE=${RUN_DIR}/iem_agent.pid
 RUNAS=vcap
 
 exec 1>> $LOG_DIR/$JOB_NAME.stdout.log
@@ -41,3 +41,4 @@ case $1 in
     echo "Usage: ctl {start|stop}" ;;
 
 esac
+exit 0

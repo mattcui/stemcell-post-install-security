@@ -2,9 +2,6 @@ set -e -x
 
 JOB_NAME=iem_agent
 
-mkdir -p ${BOSH_INSTALL_TARGET}
-#mkdir -p /var/vcap/packages/iem_agent
 cp -a ${JOB_NAME}/* ${BOSH_INSTALL_TARGET}
-#cp -a iem_agent/* /var/vcap/packages/iem_agent
 echo "bosh install target is: $BOSH_INSTALL_TARGET, copy iem_install package"
 
