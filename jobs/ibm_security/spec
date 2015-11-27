@@ -1,0 +1,9 @@
+---
+name: ibm_security
+templates:
+  ibm_security_ctl.erb: bin/ibm_security_ctl
+packages:
+  - ibm_security
+
+properties:
+  {}
