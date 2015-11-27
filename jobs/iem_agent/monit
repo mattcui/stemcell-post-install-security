@@ -1,5 +1,5 @@
-check file iem_agent
-  with path /var/vcap/sys/run/iem_agent/iem_agent.pid
+check process BESClient
+  with pidfile /var/vcap/sys/run/iem_agent/iem_agent.pid
   start program "/var/vcap/jobs/iem_agent/bin/iem_agent_ctl start"
   stop program "/var/vcap/jobs/iem_agent/bin/iem_agent_ctl stop"
   group vcap
