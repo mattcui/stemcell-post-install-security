@@ -1,9 +1,9 @@
 #!/bin/bash
 
-RUN_DIR=/var/vcap/sys/run/iem_agent
-LOG_DIR=/var/vcap/sys/log/iem_agent
 JOB_NAME=iem_agent
-PIDFILE=${RUN_DIR}/iem_agent.pid
+RUN_DIR=/var/vcap/sys/run/${JOB_NAME}
+LOG_DIR=/var/vcap/sys/log/${JOB_NAME}
+PIDFILE=${RUN_DIR}/${JOB_NAME}.pid
 RUNAS=vcap
 
 exec 1>> $LOG_DIR/$JOB_NAME.stdout.log
@@ -16,10 +16,10 @@ case $1 in
     chown -R $RUNAS:$RUNAS $RUN_DIR $LOG_DIR
 
     iem_agent_bin="$(dirname $(readlink -e $0))"
-    DONE_FILE=$iem_agent_bin/../iem_agent.done
+    DONE_FILE=$iem_agent_bin/../${JOB_NAME}.done
     if [ ! -f $DONE_FILE ]; then
        echo "`date` - Start to install IEM Agent ..."
-       cd $iem_agent_bin/../packages/iem_agent
+       cd $iem_agent_bin/../packages/${JOB_NAME}
        tar -zxvf *.tgz
        ./install_IEM.sh
        EXCODE=$?  

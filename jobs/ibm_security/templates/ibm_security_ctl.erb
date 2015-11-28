@@ -1,12 +1,12 @@
 #!/bin/bash
 
-RUN_DIR=/var/vcap/sys/run/ibm_security
-LOG_DIR=/var/vcap/sys/log/ibm_security
 JOB_NAME=ibm_security
+RUN_DIR=/var/vcap/sys/run/${JOB_NAME}
+LOG_DIR=/var/vcap/sys/log/${JOB_NAME}
 RUNAS=vcap
 
-exec 1>> $LOG_DIR/$JOB_NAME.stdout.log
-exec 2>> $LOG_DIR/$JOB_NAME.stderr.log
+exec 1>> $LOG_DIR/${JOB_NAME}.stdout.log
+exec 2>> $LOG_DIR/${JOB_NAME}.stderr.log
 
 case $1 in
 
@@ -17,10 +17,10 @@ case $1 in
     ibm_security_bin="$(dirname $(readlink -e $0))"
     DONE_FILE=${RUN_DIR}/ibm_security.done
     if [ ! -f $DONE_FILE ]; then
-       echo "`date` - Start to install IEM Agent ..."
-       cd $ibm_security_bin/../packages/bm_security
+       echo "`date` - Start to apply IBM security ..."
+       cd ${ibm_security_bin}/../packages/${JOB_NAME}
        tar -zxvf *.tgz
-       ./install_ibm_security.sh
+       ./install_${JOB_NAME}.sh
        EXCODE=$?  
        if [ "${EXCODE}" != "0" ]; then
        	   echo "Failed to apply IBM security, exit code $EXCODE"
