@@ -1,5 +1,5 @@
 check file ibm_security
   with path /var/vcap/sys/run/ibm_security/ibm_security.done
-  start program "/var/vcap/jobs/iem_agent/bin/ibm_security_ctl start"
-  stop program "/var/vcap/jobs/iem_agent/bin/ibm_security_ctl stop"
+  start program "/var/vcap/jobs/ibm_security/bin/ibm_security_ctl start"
+  stop program "/var/vcap/jobs/ibm_security/bin/ibm_security_ctl stop"
   group vcap
